@@ -1,3 +1,5 @@
+/*This project utilizes the following Employees data*/
+
 CREATE TABLE employees (
     employee_id INTEGER PRIMARY KEY,
     department TEXT,
