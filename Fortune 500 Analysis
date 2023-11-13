@@ -71,3 +71,25 @@ CASE
 END as Work_Life_Balance
 FROM fortune_companies
 ORDER BY company_name asc;
+
+
+/*Which company offers the least amount of maternity weeks and how many weeks do they offer?*/
+SELECT company_name, MIN(maternity_leave_weeks) 
+  as 'Least Maternity Leave Weeks'
+FROM fortune_companies;
+
+
+/*Which companies offer more than 20 days PTO and 12 
+weeks of maternity leave?*/
+
+/*If only the names of the companies were important, I would use this query.*/
+SELECT company_name, 
+FROM fortune_companies
+WHERE paid_time_off_days>20
+AND maternity_leave_weeks>12;
+
+/*If I would like more information on actual days/weeks offered, I would use this query.*/
+SELECT company_name, paid_time_off_days, maternity_leave_weeks
+FROM fortune_companies
+WHERE paid_time_off_days>20
+AND maternity_leave_weeks>12;
