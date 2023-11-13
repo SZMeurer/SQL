@@ -25,6 +25,8 @@ VALUES
     (14, 'Engineering', 92000.00, 10);
 
 
+# Analysis: 
+
 /*Select all the departments that pay an average of 
 at least $70,000 per year. Your results table should 
 include the department and average salary for that department, 
