@@ -21,6 +21,7 @@ VALUES
     ('Rahul Sharma', 0.5513, 0);
 
 
+# Analysis: 
 
 /*Select every participant name and the percent of the 
 marathon that they completed.*/
