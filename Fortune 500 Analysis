@@ -83,7 +83,7 @@ FROM fortune_companies;
 weeks of maternity leave?*/
 
 /*If only the names of the companies were important, I would use this query.*/
-SELECT company_name, 
+SELECT company_name
 FROM fortune_companies
 WHERE paid_time_off_days>20
 AND maternity_leave_weeks>12;
