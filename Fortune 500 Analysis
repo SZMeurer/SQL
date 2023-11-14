@@ -58,8 +58,8 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
-# Analysis: 
 
+# Analysis 1: 
 /*Looking at PTO, which companies offer the best PTO package to allow work/life balance.*/
 
 SELECT company_name,
@@ -73,14 +73,15 @@ FROM fortune_companies
 ORDER BY company_name asc;
 
 
+# Analysis 2:
 /*Which company offers the least amount of maternity weeks and how many weeks do they offer?*/
 SELECT company_name, MIN(maternity_leave_weeks) 
   as 'Least Maternity Leave Weeks'
 FROM fortune_companies;
 
 
-/*Which companies offer more than 20 days PTO and 12 
-weeks of maternity leave?*/
+# Analysis 3:
+/*Which companies offer more than 20 days PTO and 12 weeks of maternity leave?*/
 
 /*If only the names of the companies were important, I would use this query.*/
 SELECT company_name
@@ -88,8 +89,17 @@ FROM fortune_companies
 WHERE paid_time_off_days>20
 AND maternity_leave_weeks>12;
 
-/*If I would like more information on actual days/weeks offered, I would use this query.*/
+/*If I would like to see numbers of days/weeks offered, I would use this query.*/
 SELECT company_name, paid_time_off_days, maternity_leave_weeks
 FROM fortune_companies
 WHERE paid_time_off_days>20
 AND maternity_leave_weeks>12;
+
+
+# Analysis 4:
+/*Which companies have more than 25,000 employees?*/
+
+SELECT company_name, employees
+FROM fortune_companies
+GROUP BY employees 
+HAVING SUM(employees) >=25000;
